@@ -11,7 +11,7 @@ void printing(string, int, int, int); //Function for printing alphabets into the
 void clrscr(); //function to clear screen
 void voidspace(); //function to remove garbage value
 void show(int); //display the the board in console
-void breaktime(int); //function that controls the speed of movement
+void breaktime(long long); //function that controls the speed of movement
 
 int A, B, speed, step, direction;
 
@@ -222,7 +222,7 @@ void alphabet(char text, int A, int B){
 		displayBoard[19 - B][A] = '#'; displayBoard[19 - B][A + 1] = '#'; displayBoard[19 - B][A + 5] = '#'; displayBoard[19 - B][A + 6] = '#';
 		displayBoard[19 - B + 1][A] = '#'; displayBoard[19 - B + 1][A + 2] = '#'; displayBoard[19 - B + 1][A + 4] = '#'; displayBoard[19 - B + 1][A + 6] = '#';
 		displayBoard[19 - B + 2][A] = '#'; displayBoard[19 - B + 2][A + 3] = '#'; displayBoard[19 - B + 1][A + 6] = '#';
-		displayBoard[19 - B + 3][A] = '#'; displayBoard[19 - B + 3][A + 6] = '#';
+		displayBoard[19 - B + 3][A] = '#'; displayBoard[19 - B + 3][A + 6] = '#'; displayBoard[19 - B + 2][A + 6] = '#';
 		displayBoard[19 - B + 4][A] = '#'; displayBoard[19 - B + 4][A + 6] = '#';
 		displayBoard[19 - B + 5][A] = '#'; displayBoard[19 - B + 5][A + 6] = '#';
 		displayBoard[19 - B + 6][A] = '#'; displayBoard[19 - B + 6][A + 6] = '#';
@@ -231,11 +231,12 @@ void alphabet(char text, int A, int B){
 	case 'N':
 		displayBoard[19 - B][A] = '#'; displayBoard[19 - B][A + 1] = '#'; displayBoard[19 - B][A + 6] = '#';
 		displayBoard[19 - B + 1][A] = '#'; displayBoard[19 - B + 1][A + 2] = '#'; displayBoard[19 - B + 1][A + 6] = '#';
-		displayBoard[19 - B + 2][A] = '#'; displayBoard[19 - B + 2][A + 3] = '#'; displayBoard[19 - B + 3][A + 6] = '#';
+		displayBoard[19 - B + 2][A] = '#'; displayBoard[19 - B + 2][A + 3] = '#'; displayBoard[19 - B + 2][A + 6] = '#';
 		displayBoard[19 - B + 3][A] = '#'; displayBoard[19 - B + 3][A + 6] = '#'; displayBoard[19 - B + 3][A + 4] = '#';
 		displayBoard[19 - B + 4][A] = '#'; displayBoard[19 - B + 4][A + 6] = '#'; displayBoard[19 - B + 4][A + 5] = '#';
 		displayBoard[19 - B + 5][A] = '#'; displayBoard[19 - B + 5][A + 6] = '#';
 		displayBoard[19 - B + 4][A] = '#'; displayBoard[19 - B + 6][A + 6] = '#';
+		displayBoard[19 - B + 6][A] = '#';
 		break;
 	case 'O':
 	case 'o':
@@ -481,10 +482,10 @@ void show(int speed){
 
 //Determines the delay depending on user input
 
-void breaktime(int speed)
+void breaktime(long long speed)
 {
-	speed = 10000000 / speed;
-	for (int i = 0; i < speed; ++i)
+	speed = 80000000 / speed;
+	for (long long i = 0; i < speed; ++i)
 	{
 	}
 }
